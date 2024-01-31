@@ -6,7 +6,7 @@ var postgresdb = builder.AddPostgresContainer("postgres")
     .AddDatabase("postgresdb");
 
 var apiService = builder.AddProject<Projects.AspireSample_ApiService>("apiservice")
-    .WithReference(postgresdb)
+    .WithReference(postgresdb);
 
 builder.AddProject<Projects.AspireSample_Web>("webfrontend")
     .WithReference(cache)
