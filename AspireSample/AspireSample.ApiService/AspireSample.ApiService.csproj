@@ -11,4 +11,8 @@
     <ProjectReference Include="..\AspireSample.ServiceDefaults\AspireSample.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql" Version="8.0.0-preview.2.23619.3" />
+  </ItemGroup>
+
 </Project>

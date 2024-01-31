@@ -6,6 +6,8 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
+builder.Services.AddNpgsqlDataSource("postgresdb");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

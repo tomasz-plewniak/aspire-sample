@@ -1,10 +1,11 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
-var database = builder.AddPostgres("database");
+var postgresdb = builder.AddPostgres("pg")
+    .AddDatabase("postgresdb");
 
 var apiService = builder.AddProject<Projects.AspireSample_ApiService>("apiservice")
-    .WithReference(database);
+    .WithReference(postgresdb);
 
 builder.AddProject<Projects.AspireSample_Web>("webfrontend")
     .WithReference(cache)
